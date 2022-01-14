@@ -107,6 +107,8 @@ func (e *EruJobExecutor) prepareJobRuntime(ctx context.Context) error {
 // defaultEnvironmentVariables sets some useful information into environment variables.
 // This will be set to the whole running context within the workload.
 func (e *EruJobExecutor) defaultEnvironmentVariables() map[string]string {
+	logrus.Infof("e.pistage.WorkflowIdentifier is %v", e.pistage.WorkflowIdentifier)
+	logrus.Infof("e.pistage.WorkflowType is %v", e.pistage.WorkflowType)
 	return map[string]string{
 		"PISTAGE_WORKING_DIR":         e.workingDir,
 		"PISTAGE_JOB_NAME":            e.job.Name,
