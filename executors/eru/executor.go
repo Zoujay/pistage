@@ -199,7 +199,7 @@ func (e *EruJobExecutor) executeStep(ctx context.Context, step *common.Step) err
 		err  error
 		vars map[string]string
 	)
-
+	logrus.Infof("exec steps, steps is %v", step)
 	environment := command.MergeVariables(e.jobEnvironment, step.Environment)
 
 	defer func() {
